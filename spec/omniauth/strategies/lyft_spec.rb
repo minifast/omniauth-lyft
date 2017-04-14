@@ -15,11 +15,11 @@ describe OmniAuth::Strategies::Lyft do
     end
 
     it 'should have correct site' do
-      expect(subject.options.client_options.site).to eq('https://api.lyft.com')
+      expect(subject.options.client_options.site).to eq('https://api.lyft.com/v1')
     end
 
     it 'should have correct authorize url' do
-      expect(subject.options.client_options.authorize_url).to eq('https://api.lyft.com/oauth/authorize')
+      expect(subject.options.client_options.authorize_url).to eq('https://api.lyft.com/oauth/authorize?response_type=code')
     end
 
     it 'should have correct access token url' do

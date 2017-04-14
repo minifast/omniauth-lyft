@@ -11,7 +11,7 @@ Dotenv.load
 enable :sessions
 
 use OmniAuth::Builder do
-  provider :lyft, ENV['CLIENT_ID'], ENV['CLIENT_SECRET'] # , :scope => 'profile'
+  provider :lyft, 'raJvYFp-ZFhN', 'wRqziw1FYxz2iiL22i7d3HKe3p4qazSh', :scope => 'profile rides.request'
 end
 
 get '/' do
