@@ -27,6 +27,15 @@ module OmniAuth
       # or as a URI parameter). This may not be possible with all
       # providers.
 
+      uid { raw_info['id'] }
+
+      info do
+        {
+          'first_name' => raw_info['first_name'],
+          'last_name' => raw_info['last_name'],
+          'has_taken_a_ride' => raw_info['has_taken_a_ride'],
+        }
+      end
 
       def raw_info
         @raw_info ||= access_token.get("#{options[:client_options][:site]}/profile").parsed
